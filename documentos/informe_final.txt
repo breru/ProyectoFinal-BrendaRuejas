@@ -1,0 +1,63 @@
+							INFORME FINAL - QA TESTING
+							PROYECTO QA - TIKTOK LITE
+
+Resumen
+
+A partir de la ejecución de diferentes casos de prueba, se detallarán en el presente informe los resultados del proceso de testing funcional aplicado a la red social TikTok en su versión Lite para Android. El objetivo del mismo fue evaluar las funcionalidades principales y su correcto funcionamiento desde la perspectiva del usuario final, y así poder identificar los posibles defectos que pudieran surgir y documentarlos con sus respectivos resultados.
+Para ello se han ejecutado un total de 37 casos de prueba enfocados en funcionalidades como registro de usuario, inicio de sesión, validación de configuraciones aplicadas al sistema, navegación dentro de la aplicación e interacción con el contenido disponible.
+Los resultados arrojados indican que, en la mayoría de sus funcionalidades principales, el sistema responde correctamente y con un funcionamiento estable para la mayoría de los escenarios que fueron evaluados. Asimismo, los defectos menores que se han identificado podrían mejorarse, impactando positivamente en la experiencia de usuario.
+
+
+Alcance del proceso de testing
+
+Para la evaluación del funcionamiento y comportamiento efectivo del sistema se realizaron casos de prueba manuales de tipo funcional. Estas incluyeron:
+	- Registro de usuario
+	- Inicio de sesión
+	- Validación de campos y mensajes de error para los mismos
+	- Visualización del contenido
+	- Interacción con el contenido
+	- Acceso al perfil del usuario
+	- Cambios en la configuración 
+	- Comportamientos de la aplicación y transición de estados
+Las pruebas se realizaron simulando el comportamiento del usuario final y dentro de un entorno real bajo las siguientes condiciones:
+	- Dispositivo: Samsung Galaxy A56 5G 
+	- SO: Android 16
+	- Conectividad: red wifi privada
+	- Sistema: TikTok Lite en su versión pública disponible en Google Playstore
+	- Tipo de pruebas: funcionales manuales
+
+
+Resultados
+
+Del total de 37 casos de prueba ejecutados, los resultados arrojados muestran que la mayoría de las funcionalidades evaluadas han resultado positivas para su correcto funcionamiento en cada uno de los escenarios probados, ya que el status de las pruebas han sido:
+	- PASS: 34
+	- FAIL: 4
+	- BLOCKED: 0
+
+Defectos identificados
+
+A pesar de que la mayoría de las pruebas han resultado positivas, se han detectado 4 defectos documentados para su posterior reporte. A continuación se detalla cada uno de ellos:
+
+Bug 1 - Mensaje de validación incompleto para el campo "Nombre de usuario". El sistema debe mostrar claramente las reglas de validación para credenciales correctas, las cuales en este caso son >= 2 caracteres, sin mayúsculas, puntos y guiones bajos. Sin embargo al ingresar 1 solo carácter y en letra mayúscula, si bien el sistema rechaza el input como se espera, muestra el mensaje de error al usuario sin indicar todas las reglas de validación establecidas (en este caso, el mensaje hizo mención únicamente a la cantidad mínima de caracteres).
+
+Bug 2 - Falla en el cambio de estado con la restricción de tiempo para modificar el Nombre de Usuario y de Perfil. El sistema establece una restricción de 7 días para la modificación del perfil del usuario. Esta restricción se mantuvo estable pero antes de pasadas las 24 hs de su modificación, el sistema volvió a mostrar los nombres de perfil y de usuario asignados por defecto con posibilidad de volver a editarlos. 
+
+Bug 3 - Comportamiento incorrecto al volver a la aplicación desde 2do plano. Al enviar la aplicación a 2do plano y luego regresar a la misma desde el menú de aplicaciones recientes, la vista previa desapareció y mostró un comportamiento como si el usuario la hubiera cerrado, pudiendo afectar una continuidad en la experiencia del usuario.
+
+Bug 4 - Inconsistencia visual entre el Modo Claro y el Modo Oscuro. Se observó que la aplicación, a pesar de estar configurada para si visualización en Modo Oscuro, cambió la interfaz al Modo Claro. Cabe aclarar que este bug duró unos segundos y luego la aplicación corrigió la inconsistencia visual automáticamente, lo cual no permitió registrar ni generar evidencia del caso, como tampoco se logró replicarlo nuevamente. Debido a ello, este bug queda reportado como una observación y quedará a consideración del equipo de desarrolladores.
+
+
+
+Conclusiones
+
+A partir de los resultados obtenidos se concluye que la aplicación TikTok Lite presenta un comportamiento estable en sus funcionalidades para la mayoría de los casos evaluados. Estos refieren a la navegación dentro del sistema, la visualización y creación de contenido y la interacción con otros usuarios. En cuanto a los defectos encontrados sobre la validación de credenciales, consistencia visual y transición de estado pueden impactar negativamente en la experiencia de usuario.
+
+
+Recomendaciones sugeridas
+
+	- Mejorar y clarificar los mensajes de validación para que reflejen los requisitos necesarios al momento de crear las credenciales y previo al ingreso de cualquier caracter.
+	- Revisar el comportamiento de la aplicación respecto a las configuraciones visuales personalizadas por el usuario.
+	- Revisar la transición de estado de la aplicación, tanto para la restricción de tiempo de edición del perfil del usuario, como para el cierre de pantalla en ejecución en 2do plano.
+	- Bloquear el acceso a la creación de contenido y a cada uno de los pasos a seguir si el usuario no está registrado, ya que el sistema, una vez instalado, permite crear una publicación, editarla y personalizarla pero no publicarla, obligando al usuario a tener que repetir todos los pasos una vez que se ha registrado.
+
+  
