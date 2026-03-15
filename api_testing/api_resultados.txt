@@ -1,0 +1,62 @@
+INFORME DE TESTING DE APIs
+
+Se realizaron pruebas sobre la API pública Fake Store API, a través de la herramienta Postman, y sobre diferentes endpoints que permiten acceder a productos, usuarios y carritos de la tienda.
+Se utilizaron métodos GET, POST, PUT, DELETE, además de incluir casos negativos y de validación de estructura JSON.
+
+
+CASOS DE PRUEBA
+
+Se ejecutaron un total de 11 pruebas manuales, siendo estos:
+
+	- GET listado de productos
+	- GET producto específico
+	- GET lista de categorías de los productos
+	- POST crear producto nuevo
+	- PUT actualizar un producto existente
+	- DELETE eliminar un producto
+	- GET producto inexistente
+	- GET validación de estructura JSON
+	- GET usuarios de la tienda
+	- GET detalle de carritos de compra
+	- GET imagen de producto específico
+
+Como resultado, el estado de las pruebas ejecutadas ha sido 
+	- PASS: 11
+	- FAIL: 0
+
+DETALLE
+
+GET /products: al solicitar a la API el listado de productos de la tienda, el status code es correcto y se observa detallado en el Body cada uno de estos en formato JSON permitiendo reconocerlos e identificarlos uno por uno.
+
+GET /products/1: al solicitar el detalle de un producto específico, el Body refleja en formato JSON cada uno de los campos expresados para reconocerlo, con status code válido para la respuesta del endpoint.
+
+GET /products/categories: se puede observar que el formato JSON detalla el listado de categorías, las cuales se encuentran contenidas entre [] y el status code se corresponde con la solicitud realizada.
+
+POST /products : el comportamiento simplificado es el esperado, ya que el status code es correcto, el endpoint responde y devuelve el id del producto creado.
+
+PUT /products/1: a pesar de que la API se limite a confirmar el producto modificado mostrando únicamente el id, la request es válida, el status es correcto y el producto es reconocido.
+
+DELETE /products/1: si bien se espera que el producto sea borrado no se evaluó la persistencia del método en una API de prueba, la request es aceptada y el status code es válido al igual que la respuesta del servidor.
+
+GET /products/9999: si bien se puede esperar un status code 404 para un producto inexistente, la solicitud fue procesada correctamente arrojando un status code 200 y Body vacío sin datos para devolver y por este motivo no se documentó el resultado como FAIL.
+
+GET /products (VALIDACIÓN): se observa en el Body que la estructura JSON para el listado de productos es consistente, ya que puede observarse a cada uno de estos con sus campos correspondientes y los datos arrojados son correctos, manteniendo un status code válido de respuesta. 
+
+GET /users: al solicitar información de los usuarios registrados en la plataforma, se obtuvo el status code correspondiente junto con el detalle de los campos asignados para la recolección de datos personales de cada uno de estos (id, email, contraseña, username, nombre, apellido, dirección, teléfono y la cantidad de veces que estos datos hayan sido modificados por cada uno de los usuarios).
+
+GET /carts: el Body refleja el detalle de cada carrito de compra y pueden identificarse según el id del usuario, fecha de compra, productos y cantidades. El status code es correcto.
+
+GET /products/2 (IMG): al ingresar al link de imagen ".png" que figura en el campo "image" para el producto con id=2, la Preview que se visualiza en el Body no presenta fallas y el status code es el esperado para esta solicitud.
+
+
+OBSERVACIONES
+
+Durante las pruebas se observó que las operaciones POST, PUT y DELETE simulan la operación solicitada sin generar cambios en los datos. Este comportamiento es esperable al tratarse de una API pública de prueba y, por lo tanto, tener sus limitaciones para la visualización de algunos comportamientos.
+En cuanto a la validación de estructura JSON, los endpoitns devuelven una estructura consistente. Los campos incluidos en dicha estructura proporcionan información como un ID del producto, un título de referencia, el precio, la descripción del producto, categoría a la que pertenece el mismo, una imagen ilustrativa y un rating de valoraciones que indica la cantidad de personas que calificaron el producto y la media del puntaje obtenido.
+
+CONCLUSIÓN
+
+Para los endpoints evaluados, la API presenta un comportamiento estable, por lo que ha respondido correctamente a cada solicitud realizada. Entre estas se han considerado código de respuesta HTTP, la estructura JSON, el comportamiento de la API para casos positivos y negativos y su consistencia en cada una de las respuestas.
+Por lo tanto, no se han detectado fallas críticas durante las pruebas ejecutadas.
+
+
