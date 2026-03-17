@@ -26,17 +26,14 @@ Es por esto que el proyecto incluye los respectivos casos de prueba, como tambi�
 
 
 
-Los casos de prueba se enfocaron en validar las funcionalidades principales del sistema, desde la perspectiva del usuario final. Dichas funcionalidades incluyen: registro de usuario; inicio de sesión; validación de reglas para las credenciales del usuario; acceso y edición de perfil; navegación dentro de la app; visualización de contenidos; interacción con videos; comportamiento de la aplicación respecto a configuraciones establecidas por el usuario, como también su funcionamiento en 2do plano.
+Los casos de prueba se enfocaron en validar las funcionalidades principales del sistema, desde la perspectiva del usuario final. Dichas funcionalidades incluyen: 
 
-En total se ejecutaron 37 casos de prueba, de los cuales han resultado:
-
-
-
- 	- PASS: 33
-
- 	- FAIL: 4
-
- 	- BLOCKED: 0
+* Pruebas funcionales sobre la aplicación
+* Validación de flujos principales como registro, login, perfil, navegación
+* Ejecución de un total de 37 casos de prueba
+* Identificación y documentación de bugs
+* Pruebas de API en Fake Store API y utilización de Postman
+* Validación de respuestas HTTP y de estructura JSON
 
 
 
@@ -48,19 +45,59 @@ Los casos de prueba han sido ejecutado bajo las siguientes condiciones:
 
 
 
- 	- DISPOSITIVO: teléfono móvil Samsung Galaxy A56 5G
+* DISPOSITIVO: teléfono móvil Samsung Galaxy A56 5G
+* SO: Android 16
+* CONECTIVIDAD: Conexión a red wifi privada
+* APLICACIÓN: TikTok Lite (versión pública en Google Playstore)
+* TIPOS DE PRUEBAS: funcionales manuales
+* HERRAMIENTAS:
 
- 	- SO: Android 16
-
- 	- CONECTIVIDAD: Conexión a red wifi privada
-
- 	- APLICACIÓN: TikTok Lite (versión pública en Google Playstore)
-
- 	- TIPOS DE PRUEBAS: funcionales manuales
-
-Adicionalmente se realizaron pruebas de API en Fake Store API y ejecutadas en Postman
+  * Postman (API testing)
+  * Excel (matriz de casos de prueba)
+  * Git y GitHub
 
 
+
+### Resultados 
+
+
+
+En total se ejecutaron 37 casos de prueba, de los cuales:
+
+
+
+ 	- PASS: 33
+
+ 	- FAIL: 4
+
+ 	- BLOCKED: 0
+
+
+
+### Bugs identificados
+
+
+
+1. Mensaje de validación incompleto para el campo Nombre de usuario
+2. Inconsistencia visual entre Modo claro / Modo oscuro (no reproducible)
+3. Pérdida de estado de la aplicación al volver desde segundo plano
+4. Falla en la aplicación de políticas de la empresa en la restricción de cambio de nombre de usuario y de perfil
+
+
+
+### Testing de APIs
+
+
+
+Se registraron 11 casos de prueba sobre los endpoints de Fake Store API:
+
+* Métodos: GET, POST, PUT, DELETE
+* Casos positivos y negativos
+* Validación de estructura JSON
+
+
+
+Resultado: status PASS para todas las pruebas considerando el comportamiento esperado de una API pública simulada para su testeo
 
 
 
@@ -68,5 +105,14 @@ Adicionalmente se realizaron pruebas de API en Fake Store API y ejecutadas en Po
 
 
 
-De acuerdo con los resultados obtenidos y su posterior análisis, la aplicación logra cumplir con un funcionamiento estable en la mayoría de los escenarios evaluados con cada caso de prueba. Los defectos identificados están relacionados con funcionalidades de validación de campos, comportamiento visual y gestión de la transición de estados. Independientemente de ello, sus funcionalidades principales operan de manera correcta. Se considera que la aplicación puede ser utilizada, aunque se recomienda su revisión y mejora de los bugs encontrados para que la experiencia de usuario sea más óptima.
+De acuerdo con los resultados obtenidos y su posterior análisis, la aplicación logra cumplir con un funcionamiento estable en la mayoría de los escenarios evaluados con cada caso de prueba. Los defectos identificados son considerados de severidad media y baja, pero que no afectan a su uso principal, aunque impactan en la experiencia del usuario. Se considera que la aplicación puede ser utilizada, aunque se recomienda su revisión y mejora de los bugs encontrados para que la experiencia de usuario sea más óptima y así mejorar la calidad del producto.
+
+
+
+
+
+### Observaciones
+
+* Buen comportamiento general en sus funcionalidades
+* Los bugs no afectan su uso
 
