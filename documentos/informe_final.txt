@@ -34,17 +34,25 @@ Del total de 37 casos de prueba ejecutados, los resultados arrojados muestran qu
 	- FAIL: 4
 	- BLOCKED: 0
 
+
 Defectos identificados
 
 A pesar de que la mayoría de las pruebas han resultado positivas, se han detectado 4 defectos documentados para su posterior reporte. A continuación se detalla cada uno de ellos:
 
 Bug 1 - Mensaje de validación incompleto para el campo "Nombre de usuario". El sistema debe mostrar claramente las reglas de validación para credenciales correctas, las cuales en este caso son >= 2 caracteres, sin mayúsculas, puntos y guiones bajos. Sin embargo al ingresar 1 solo carácter y en letra mayúscula, si bien el sistema rechaza el input como se espera, muestra el mensaje de error al usuario sin indicar todas las reglas de validación establecidas (en este caso, el mensaje hizo mención únicamente a la cantidad mínima de caracteres).
 
-Bug 2 - Falla en el cambio de estado con la restricción de tiempo para modificar el Nombre de Usuario y de Perfil. El sistema establece una restricción de 7 días para la modificación del perfil del usuario. Esta restricción se mantuvo estable pero antes de pasadas las 24 hs de su modificación, el sistema volvió a mostrar los nombres de perfil y de usuario asignados por defecto con posibilidad de volver a editarlos. 
+Bug 2 - Falla en el cambio de estado con la restricción de tiempo para modificar el Nombre de Usuario y de Perfil. El sistema establece una restricción de 7 días para la modificación del nombre de perfil y 30 días para el nombre de usuario. Esta restricción se mantuvo estable pero antes de completar las 24 hs de su modificación, el sistema volvió a mostrar los nombres de perfil y de usuario asignados por defecto con posibilidad de volver a editarlos. Cabe destacar que este bug fue corregido posteriormente sin posibilidad de volver a reproducir el comportamiento, por lo que se considera un BUG INTERMITENTE.
 
 Bug 3 - Comportamiento incorrecto al volver a la aplicación desde 2do plano. Al enviar la aplicación a 2do plano y luego regresar a la misma desde el menú de aplicaciones recientes, la vista previa desapareció y mostró un comportamiento como si el usuario la hubiera cerrado, pudiendo afectar una continuidad en la experiencia del usuario.
 
-Bug 4 - Inconsistencia visual entre el Modo Claro y el Modo Oscuro. Se observó que la aplicación, a pesar de estar configurada para si visualización en Modo Oscuro, cambió la interfaz al Modo Claro. Cabe aclarar que este bug duró unos segundos y luego la aplicación corrigió la inconsistencia visual automáticamente, lo cual no permitió registrar ni generar evidencia del caso, como tampoco se logró replicarlo nuevamente. Debido a ello, este bug queda reportado como una observación y quedará a consideración del equipo de desarrolladores.
+Observation - Inconsistencia visual entre el Modo Claro y el Modo Oscuro. Se observó que la aplicación, a pesar de estar configurada para si visualización en Modo Oscuro, cambió la interfaz al Modo Claro. Cabe aclarar que este bug duró unos segundos y luego la aplicación corrigió la inconsistencia visual automáticamente, lo cual no permitió registrar ni generar evidencia del caso, como tampoco se logró replicarlo nuevamente. Debido a ello, este bug queda reportado como una observación y quedará a consideración del equipo de desarrolladores.
+
+Severidad de los casos
+
+Bug 1 - LOW - Su funcionalidad es correcta ya que rechaza el formato pero el mensaje no comunica todas las reglas
+Bug 2 - MEDIUM - Regla del negocio que no se cumple, y a pesar de que no rompe la app, viola las políticas del sistema
+Bug 3 - MEDIUM - Afecta a la continuidad en el uso de la app, obligando al usuario a recargarla y perder el estado previo a su cierre
+OBSERVATION - LOW - El impacto es visual y no afecta al resto de las funcionalidades principales para la cual se desarrolló la app
 
 
 

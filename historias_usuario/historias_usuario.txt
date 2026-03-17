@@ -60,7 +60,7 @@ HU1: Como usuario nuevo quiero poder registrarme en la app para crear mi propia 
 	C1: el sistema debe permitir ingresar un nombre de usuario válido
 	C2: el nombre de usuario debe tener más de un carácter
 	C3: el nombre de usuario no debe contener mayúsculas ni caracteres especiales que no sean puntos y guiones bajos
-	C4: el susuario ebe poder ingresar una contraseña válida, entre 8 y 20 caracteres, con letras, números y caracteres especiales
+	C4: el usuario debe poder ingresar una contraseña válida, entre 8 y 20 caracteres, con letras, números y caracteres especiales
 	C5: el sistema debe poder mostrar una leyenda con los requisitos de validación para el nombre de usuario y la contraseña
 	C6: el sistema debe poder rechazar los datos ingresados cuando no cumplen con los requisitos establecidos
 
@@ -68,41 +68,47 @@ HU2: como usuario quiero iniciar sesión para acceder a mi cuenta
 	C1: el sistema debe permitir ingresar las credenciales correctas
 	C2: el sistema debe permitir al usuario ingresar al feed principal 
 	C3: el sistema debe mostrar un mensaje de error cuando las credenciales son incorrectas
-	C4: el sistema debe rechazar el inicio de sesión con credenciales vacías  
+	C4: el sistema debe rechazar el inicio de sesión con credenciales vacías
+	C5: el sistema debe permitir restablecer la contraseña   
 
-HU3: como usuario quiero ver videos en el feed para consumir contenido de manera rápida
-	C1: el usuario debe poder abrir la app
-	C2: los videos deben poder cargarse sin demoras
-	C3: el usuario debe poder desplazarse por el feed para ver el contenido
-	C4: los videos deben poder visualizarse correctamente sin errores visuales
-
-HU4: Como usuario quiero interactuar con el contenido de otros usuarios mediante la acción "Like"
+HU3: Como usuario quiero interactuar con el contenido de otros usuarios 
 	C1: el usuario debe poder acceder al botón "Like", visualizado en cada uno de los videos del feed
 	C2: el botón "Like" debe responder al presionar el ícono en pantalla
 	C3: el ícono debe cambiar de estado indicando la concreción de la acción "Like"
+	C4: el usuario debe poder comentar el contenido
+	C5: el usuario debe poder visualizar los comentarios 
+	C6: el usuario debe poder guardar contenido
+	C7: el botón "Guardar" debe responder al presionar el ícono en pantalla
+	C8: el ícono debe cambiar de estado indicando la concreción de la acción "Guardar"
+	C9: el usuario debe poder compartir contenido en otras redes sociales
+	
+HU4: Como usuario quiero interactuar con mi contenido
+	C1: el usuario debe poder acceder a los contenidos likeados 
+	C2: el usuario debe poder acceder a los contenidos privados
+	C3: el usuario debe poder acceder a los contenidos guardados
+	C4: el usuario debe poder eliminar el contenido
 
 HU5: Como usuario quiero poder seguir a otros usuarios para ver sus contenidos e incrementar mi red
 	C1: debe existir un botón para la acción "Seguir" para cada usuario de la plataforma
 	C2: el sistema debe registrar el seguimiento una vez realizada la acción
 	C3: el botón "Seguir" debe cambiar de estado para cada usuario a "Siguiendo"
-
-HU6: como usuario quiero navegar por las distintas secciones y pantallas de la aplicación y acceder a sus funcionalidades
-	C1: el usuario debe poder acceder a su perfil
-	C2: el usuario debe poder volver al feed principal
-	C3: el usuario debe poder acceder a la bandeja de entrada
 	C4: el usuario debe poder ingresar al listado de contactos sugeridos para seguir
-	C5: el usuario debe poder acceder a los contenidos likeados 
-	C6: el usuario debe poder acceder a los contenidos privados
-	C7: el usuario debe poder acceder a los contenidos guardados
-	C8: la navegación entre pantallas debe ocurrir sin errores ni demoras
 
-HU7: como usuario quiero que la aplicación mantenga su estado al pasar a otra aplicación y regresar nuevamente
+HU6: Como usuario quiero modificar información de mi perfil
+	C1: el usuario debe poder acceder a su perfil
+	C2: el usuario debe poder cambiar el nombre de usuario
+	C3: el usuario debe poder cambial el nombre de perfil
+	C4: la aplicación debe validar las reglas de validación para el nombre de usuario
+	C5: la aplicación debe validar las reglas de validación para el nombre de perfil
+	C6: el usuario debe poder agregar una descripción en su bio
+
+HU7: Como usuario quiero que la aplicación mantenga su estado al pasar a otra aplicación y regresar nuevamente
 	C1: la aplicación debe conservar su estado si pasa a 2do plano
 	C2: la aplicación debe mostrar la última vista, previa al paso a 2do plano
 	C3: la aplicación no debe reiniciarse
 	C4: la aplicación no debe cerrarse
 
-HU8: como usuario quiero visualizar la configuración personalizada y aplicada a la aplicación
+HU8: Como usuario quiero visualizar la configuración personalizada y aplicada a la aplicación
 	C1: si el dispositivo está configurado en modo oscuro, la aplicación debe respetar esa configuración
 	C2: si la configuración cambia al modo claro, la aplicación debe modificar la misma
 	C3: no debe haber inconsistencias visuales 
