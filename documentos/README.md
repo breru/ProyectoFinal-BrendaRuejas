@@ -22,7 +22,7 @@ Es por esto que el proyecto incluye los respectivos casos de prueba, como tambi�
 
 
 
-### Alcance 
+### Alcance
 
 
 
@@ -32,11 +32,11 @@ En total se ejecutaron 37 casos de prueba, de los cuales han resultado:
 
 
 
-&nbsp;	- PASS: 33
+ 	- PASS: 33
 
-&nbsp;	- FAIL: 4
+ 	- FAIL: 4
 
-&nbsp;	- BLOCKED: 0
+ 	- BLOCKED: 0
 
 
 
@@ -48,15 +48,15 @@ Los casos de prueba han sido ejecutado bajo las siguientes condiciones:
 
 
 
-&nbsp;	- DISPOSITIVO: teléfono móvil Samsung Galaxy A56 5G
+ 	- DISPOSITIVO: teléfono móvil Samsung Galaxy A56 5G
 
-&nbsp;	- SO: Android 16
+ 	- SO: Android 16
 
-&nbsp;	- CONECTIVIDAD: Conexión a red wifi privada
+ 	- CONECTIVIDAD: Conexión a red wifi privada
 
-&nbsp;	- APLICACIÓN: TikTok Lite (versión pública en Google Playstore)
+ 	- APLICACIÓN: TikTok Lite (versión pública en Google Playstore)
 
-&nbsp;	- TIPOS DE PRUEBAS: funcionales manuales
+ 	- TIPOS DE PRUEBAS: funcionales manuales
 
 Adicionalmente se realizaron pruebas de API en Fake Store API y ejecutadas en Postman
 

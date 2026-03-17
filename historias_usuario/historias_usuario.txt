@@ -112,3 +112,5 @@ HU8: Como usuario quiero visualizar la configuración personalizada y aplicada a
 	C1: si el dispositivo está configurado en modo oscuro, la aplicación debe respetar esa configuración
 	C2: si la configuración cambia al modo claro, la aplicación debe modificar la misma
 	C3: no debe haber inconsistencias visuales 
+
+LINK DE ACCESO AL TABLERO TRELLO: https://trello.com/invite/b/69b845806cc44887eaefb182/ATTI4a832c04223aceb8e30b16b4612c2fac90E7456E/proyecto-qa-testing-tiktok-lite
